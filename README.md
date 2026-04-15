@@ -3,6 +3,10 @@ Folder structure for backend:
 
 
 /root
+## Folder Structure
+
+```
+/root
 ├── /backend
 │   ├── /prisma
 │   │   └── schema.prisma         # Database models & Enums
@@ -20,46 +24,43 @@ Folder structure for backend:
 │   │   │   │   └── tasks.dto.ts
 │   │   │   └── /health
 │   │   │       └── health.routes.ts # Deep health check (DB + Redis)
-│   │   ├── /shared               # Cross-cutting concerns
+│   │   ├── /shared
 │   │   │   ├── /middlewares
 │   │   │   │   ├── auth.middleware.ts
 │   │   │   │   ├── role.middleware.ts
-│   │   │   │   ├── validate.middleware.ts # Uses DTOs to validate
-│   │   │   │   └── error.middleware.ts    # Global error handler
+│   │   │   │   ├── validate.middleware.ts
+│   │   │   │   └── error.middleware.ts
 │   │   │   ├── /utils
-│   │   │   │   ├── logger.ts     # Structured console logging
-│   │   │   │   ├── AppError.ts   # Custom error class
-│   │   │   │   └── catchAsync.ts # Wrapper to eliminate try-catch bloat
-│   │   │   └── prisma.ts         # Prisma Client singleton
+│   │   │   │   ├── logger.ts
+│   │   │   │   ├── AppError.ts
+│   │   │   │   └── catchAsync.ts
+│   │   │   └── prisma.ts
 │   │   ├── /config
-│   │   │   ├── env.ts            # Validated env variables
-│   │   │   └── swagger.ts        # API Doc configuration
-│   │   ├── app.ts                # Express setup & global middlewares
-│   │   └── server.ts             # Entry point (port listener)
+│   │   │   ├── env.ts
+│   │   │   └── swagger.ts
+│   │   ├── app.ts
+│   │   └── server.ts
 │   ├── .env
 │   ├── tsconfig.json
 │   └── package.json
-└── /frontend                     # Next.js Module
-    ├── /src
-    │   ├── /app                  # Pages & Layouts
-    │   ├── /components           # UI Components
-    │   ├── /services             # Axios API calls
-
-
-
-
-    Folder structure for frontend:frontend/
-├── app/
-│   ├── dashboard/
-│   │   └── page.tsx      <-- (New Dashboard File)
+└── /frontend
+├── /app
+│   ├── /dashboard
+│   │   └── page.tsx        # New Dashboard File
 │   ├── layout.tsx
-│   └── page.tsx           <-- (Your Login/Register File)
-├── src/
-│   └── lib/
-│       └── axios.ts       <-- (Your API Client)
-├── .env.local             <-- (Contains NEXT_PUBLIC_API_URL)
+│   └── page.tsx            # Login/Register Page
+├── /src
+│   └── /lib
+│       └── axios.ts        # API Client
+├── .env.local              # Contains NEXT_PUBLIC_API_URL
 ├── package.json
 └── next.config.ts
+```
+
+
+
+
+   
 
 
 
