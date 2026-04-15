@@ -12,7 +12,10 @@ export const register = catchAsync(async (req: Request, res: Response) => {
 
   const user = await authService.createUser(req.body);
 
-  res.status(201).json({ status: 'success', data: { user } });
+  
+  const token = jwt.sign({ id: user.id }, ENV.JWT_SECRET, { expiresIn: '1d' });
+
+  res.status(201).json({ status: 'success', token });
 });
 
 export const login = catchAsync(async (req: Request, res: Response) => {

@@ -11,6 +11,7 @@ export const globalErrorHandler = (
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
 
+  console.error('🔴 ERROR:', err.message, err.stack); // ← add this line
   logger.error(`${err.message}`, err);
 
   res.status(err.statusCode).json({
