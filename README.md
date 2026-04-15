@@ -90,3 +90,54 @@ A production-grade REST API built with **Node.js, Express, and PostgreSQL**. Thi
 
     │   └── /middleware.ts        # Client-side route protection
     └── package.json
+
+
+
+  API DOCUMENTAION:Task Management API
+ 1.0.0 
+OAS 3.0
+API documentation for the SDE Assignment
+
+Servers
+
+http://localhost:5000 - Development server
+
+Authorize
+Auth
+Authentication endpoints
+
+
+
+POST
+/api/v1/auth/register
+Register a new user
+
+
+POST
+/api/v1/auth/login
+Login with existing credentials
+
+Health
+System health check
+
+
+
+GET
+/health
+Check system health
+
+Tasks
+Task management endpoints (requires authentication)
+
+
+
+GET
+/api/v1/tasks
+Get all my tasks
+
+
+
+POST
+/api/v1/tasks
+Create a new task
+
